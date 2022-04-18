@@ -1,0 +1,12 @@
+- 
+    let link_list = { 'https://vk.com/furball97' : '../../../assets/img/links/vk.png',
+    'https://t.me/MiKaSa_V97' : '../../../assets/img/links/telegram.png',
+    'mailto:mripro2016@yandex.ru' : '../../../assets/img/links/email.png',
+    'https://bitbucket.org/mikasa97/' : '../../../assets/img/links/bitbucket.png',};
+
+
+block linksFotter
+    each value, link in link_list
+        a(class='links' href=`${link}`)
+            .footer-links
+                img(src=`${value}`)

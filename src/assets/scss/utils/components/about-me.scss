@@ -1,0 +1,219 @@
+// .about-me {
+//     // height: 100vh;
+//     // height: calc(100vh - 5%);
+//     // height: 100%;
+//     height: fit-content;
+//     padding-top: 2%;
+//     padding-bottom: 3%;
+
+//     &__content {
+//         height: fit-content;
+//         // column-count: 1;
+//         // margin: 0 auto;
+//         // height: 70%;
+//         // max-height: 70%;
+//         // width: 100%;
+//         // max-width: calc(100% - 288px);
+//         &.row {
+//             --bs-gutter-x: 0;
+//         }
+//     }
+// }
+
+.about-me {
+
+    // // height: 100%;
+    // &__title {
+    //     // height: 45%;
+    // }
+
+    &__content {
+        // height: 55%;
+        column-count: 2;
+    }
+}
+
+// .test {
+//     height: 100%;
+//     &__test2 {
+//         height: 45%;
+//     }
+// }
+
+
+.content-info {
+    display: flex;
+
+    .container {
+        display: grid;
+        padding: 20px;
+        padding-left: 0px;
+
+        &__photo {
+            transition: all 1.5s;
+            opacity: 0;
+            transform: translateX(-100px);
+
+            &_show {
+                opacity: 1;
+                transition: all 1.5s;
+                transform: translateX(0%);
+            }
+
+            .photo-title {
+                color: #fff;
+                font-size: 60px;
+                transform: translateZ(2px);
+                text-transform: uppercase;
+                user-select: none;
+                z-index: 1;
+                font-weight: bolder;
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+            width: 100%;
+            border-radius: 10px;
+            max-width: 400px;
+            height: 635px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url("/assets/img/photoAbout.png");
+            display: grid;
+            place-items: center;
+            position: relative;
+            transition: transform .3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
+            overflow: hidden;
+
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);
+            // cursor: pointer;
+
+            &:before {
+                content: "";
+                // background: rgba(0, 0, 0, 0.4);
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 0;
+            }
+
+            &:after {
+                content: "";
+                // background:  radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+                position: absolute;
+                padding-top: 220%;
+                width: 220%;
+                left: 0;
+                top: 0;
+                z-index: 2;
+                transform: translate(-50%, -50%);
+                top: let(--reflect-top, 0);
+                left: let(--reflect-left, 0);
+                // opacity: let(--reflect-power, 0);
+                transition: opacity .3s ease;
+            }
+
+            &:hover {
+                transition-duration: .1s;
+
+                &:after {
+                    transition-duration: .1s;
+                }
+            }
+        }
+    }
+
+
+    &__description {
+        width: 100%;
+        max-width: 722px;
+
+        .description-text {
+            opacity: 0;
+            transition: all 1.5s;
+            // transform: translateY(20px);
+
+            &_show {
+                opacity: 1;
+                transition: all 1.5s;
+                // transform: translateY(0%);
+            }
+        }
+
+        .link-btn {
+            opacity: 0;
+            transition: all 1.5s;
+            transform: translateY(20px);
+
+            &_show {
+                opacity: 1;
+                transition: all 1.5s;
+                transform: translateY(0%);
+            }
+        }
+    }
+}
+
+.header {
+    &__title {
+        text-transform: uppercase;
+        color: #93938F;
+        @include modification-text(20px, 22px);
+        margin-bottom: 3%;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 26px;
+        margin-bottom: 5%;
+    }
+}
+
+.biography {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 21px;
+    color: #93938F;
+    margin-bottom: 4%;
+}
+
+.contact {
+    .personal-information {
+        display: flex;
+        margin-bottom: 3%;
+
+        &:last-child {
+            margin-bottom: 23%;
+        }
+
+        &__title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 21px;
+            margin-right: 5px;
+        }
+
+        &__description {
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 21px;
+            text-decoration: none;
+
+            color: #93938F;
+        }
+    }
+}

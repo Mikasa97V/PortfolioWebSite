@@ -1,0 +1,13 @@
+.contact-me.container 
+    .contact-me__title.row 
+        block content-header
+            include ../common/title.pug
+            +title("contact me", 'location', false)
+    block navbar-bottom
+         include ../modules/navbar.pug
+         +navbar(['home', 'about me', 'technologies', 'portfolio'], 'position-center')
+    block linksFotter
+         .links-wrapper
+            include ../common/footer-links.pug
+    .creature © Yaroslavna Gaivoronyuk 2022
+            

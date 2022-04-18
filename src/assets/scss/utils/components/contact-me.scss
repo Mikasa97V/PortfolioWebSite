@@ -1,0 +1,36 @@
+.contact-me {
+    height: 100%;
+}
+
+.links-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 75px 0px 90px 0px;
+
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translateY(150px);
+
+    &_show {
+        opacity: 1;
+        transition: all 1.5s;
+        transform: translateY(0%);
+    }
+}
+
+.creature {
+    color: #b9b9b7;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translateY(50px);
+
+    &_show {
+        opacity: 1;
+        transition: all 1.5s;
+        transform: translateY(0%);
+    }
+}

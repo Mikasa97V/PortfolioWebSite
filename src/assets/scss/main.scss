@@ -1,0 +1,129 @@
+// @import "utils/libs";
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/fonts";
+//@import "utils/_reset";
+@import "utils/_normalize";
+// @import "utils/_functions";
+// @import "smart-grid";
+@import "utils/common/button";
+// @import "utils/common/input";
+@import "utils/animate";
+
+@import "utils/components/navbar";
+@import "utils/common/section-title";
+@import "utils/common/footer-links";
+@import "utils/components/modal";
+@import "utils/components/about-me";
+@import "utils/components/preview";
+@import "utils/components/abilities";
+@import "utils/components/portfolio";
+@import "utils/components/contact-me";
+@import "utils/components/projects-gallery";
+
+html, body {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;               /* ширина scrollbar */
+}
+// body::-webkit-scrollbar-track {
+//   background: rgba(173, 173, 173, 0.705);        /* цвет дорожки */
+// }
+// body::-webkit-scrollbar-thumb {
+//   background-color: rgb(0, 0, 0);    /* цвет плашки */
+//   border-radius: 20px;       /* закругления плашки */
+//   border: 1px solid rgba(255, 255, 255, 0.5);  /* padding вокруг плашки */
+// }
+
+
+
+body.lock {
+  overflow: hidden;
+}
+
+header {
+  height: 100vh;
+}
+
+.background-image {
+  @include full-size;
+
+  background-image: url("/assets/img/mountains.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  padding: 0;
+  margin: 0;
+}
+
+.block-darkening {
+  // height: calc(100vh - 38px);
+  height: 100vh;
+  padding: 38px 0px 0px 0px;
+  background: rgba(51, 48, 48, 0.68);
+
+}
+
+// .preview {
+//   padding: 0;
+//   margin: 5% auto;
+// }
+
+.information {
+  // height: 100%;
+  max-height: 900px;
+  padding-top: 2%;
+  padding-bottom: 3%;
+}
+
+.abilities {
+  height: 100%;
+  // max-height: 400px;
+  max-height: 100vh;
+  padding-bottom: 3%;
+  padding-top: 2%;
+
+  background: #000000;
+}
+
+.creative-works {
+  height: fit-content;
+  padding-bottom: 3%;
+  padding-top: 2%;
+}
+
+.footer {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+
+  &__background {
+    height: 100%;
+    background-image: url("/assets/img/mountains.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 0;
+    margin: 0;
+  }
+}
+.footer-block-darkening {
+  height: 100%;
+  padding: 38px 0px 0px 0px;
+  background: rgba(51, 48, 48, 0.68);
+}
+// .modal-wrap {
+//   width: 100%;
+//   height: 100%;
+// }

@@ -1,0 +1,48 @@
+@mixin full-size {
+    width: 100%;
+    height: 100vh;
+}
+
+@mixin left-margin($isLeftMargin: false) {
+    @if($isLeftMargin) {
+        margin-right: 45px;
+    }
+
+    @else {
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+@mixin centering($valueY, $valueX) {
+    margin: $valueY $valueX;
+}
+
+@mixin modification-text($size, $lineHeight) {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin section-title-style($isLabel: true) {
+    @if($isLabel) {
+        @include modification-text(36px, 40px);
+    }
+
+    @else {
+        @include modification-text(20px, 22px);
+    }
+}
+
+@mixin centering-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin btn-size {
+    width: 75%;
+    height: 100%;
+}

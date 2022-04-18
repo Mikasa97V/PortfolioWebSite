@@ -1,0 +1,86 @@
+.portfolio {
+    height: fit-content;
+    
+
+    &__title {
+        height: 20%;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.items {
+    flex: 0 0 33.333%;
+    margin-bottom: 4%;
+
+    &_center {
+        display: flex;
+        justify-content: center;
+    }
+
+    &_end {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.project-card {
+    width: 258px;
+    height: 258px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 4px rgba(0,0,0,.25));
+
+    opacity: 0;
+    transition: all 2s;
+    // transform: rotate(-25deg);
+
+    &_show {
+        opacity: 1;
+        transition: all 2s;
+        // transform: rotate(0deg);
+    }
+}
+
+.description,
+.pictures {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+
+.description {
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 15px;
+    background-color: #000000;
+    transform: rotateY(180deg);
+    &__title {
+        color: #fff;
+        font-size: x-large;
+    }
+    &__desc {
+        color:#b9b9b7;
+    }
+}
+
+.project-card:hover .pictures {
+    transform: rotateY(180deg);
+}
+
+.project-card:hover .description {
+    transform: rotateY(360deg);
+}

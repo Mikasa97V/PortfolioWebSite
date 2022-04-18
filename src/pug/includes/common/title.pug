@@ -1,0 +1,5 @@
+mixin title(label, description, light_color_mode)
+    - let color_mode=light_color_mode ? 'light' : 'dark';
+    .title-wrap
+        div(class=`title-wrap__description title-wrap__description_${color_mode}`) #{description}
+        div(class=`title-wrap__label title-wrap__label_${color_mode}`) #{label}

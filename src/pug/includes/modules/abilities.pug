@@ -1,0 +1,30 @@
+- 
+    let data = ['HTML 5', 'CSS 3', 'Sass', 'JavaScript ES6+', 
+    'React 17', 'Redux', 'Npm / Yarn', 'Git', 
+    'Figma', 'Webpack', 'Pug', 'Material UI'];
+
+mixin content
+    each value in data
+        .technologies-wrap 
+            .circle 
+            .technology= value
+
+.technologies.container
+    .technologies__title.row
+        block content-header
+            include ../common/title.pug
+            +title("technologies", 'abilities', false)
+    block technologies-list 
+        .technologies__content
+            +content
+    .gallery
+        input(type='radio' name='slider' id='item-1' checked)
+        input(type='radio' name='slider' id='item-2')
+        input(type='radio' name='slider' id='item-3')
+        .cards
+            label#song-1.card(for='item-1')
+                img.cards__img(src='../../../assets/img/course-certificates/html.png' alt='html' draggable="false")
+            label#song-2.card(for='item-2')
+                img.cards__img(src='../../../assets/img/course-certificates/js.png' alt='javascript' draggable="false")
+            label#song-3.card(for='item-3')
+                img.cards__img(src='../../../assets/img/course-certificates/js2.png' alt='javascript' draggable="false")

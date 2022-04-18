@@ -1,0 +1,37 @@
+extends ../layout/base
+
+block variables
+   //подключаем основу для страницы и выводим в нее данные
+   - var title='Yaroslavna Gaivoronyuk';
+   - var description='Website portfolio';
+   - var pageClass='index-page';
+
+
+block content
+   .background-image 
+      a(name='home')
+      .block-darkening
+         block navbar-top
+            include ../includes/modules/navbar.pug
+            +navbar(['about me', 'technologies', 'portfolio', 'contact'], 'position-end')
+         .preview
+         include ../includes/modules/preview.pug
+   a(name='about me')
+   .information
+      include ../includes/modules/about-me.pug
+   a(name='technologies')
+   .abilities
+      include ../includes/modules/abilities.pug
+   a(name='portfolio')
+   .creative-works
+      include ../includes/modules/portfolio.pug
+      include ../includes/modules/projects-gallery.pug
+   //- .projects-gallery
+   //-    include ../includes/modules/projects-gallery.pug
+   .footer
+      .footer__background
+         a(name='contact')
+         .footer-block-darkening
+            include ../includes/modules/contact-me.pug
+   //- .modal-wrap
+   //-    include ../includes/modules/modal.pug

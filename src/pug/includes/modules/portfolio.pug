@@ -1,0 +1,46 @@
+- 
+    let pictures = [
+        {picture: '../../../assets/img/projects/Cat.png', title: 'Image generator', desc: "This is a cute project that was one of the test tasks."},
+        {picture: '../../../assets/img/projects/HungryPeople.png', title: 'Hungry people', desc: "This is the first educational project that was chosen to learn Html and Css."},
+        {picture: '../../../assets/img/projects/Clean.png', title: 'Uber Clean', desc: "This is the second educational project that was chosen to study media queries."},
+        {picture: '../../../assets/img/projects/Radium.png', title: 'Business card', desc: "This is a business card website, which is one of the test tasks."},
+        {picture: '../../../assets/img/projects/ToDoList.png', title: 'To Do List', desc: "This is the first educational project that was chosen to study the React library."},
+        {picture: '../../../assets/img/projects/MoneyGuard.png', title: 'Money Guard', desc: "This is a startup project that was developed as part of a project at the university."},]
+
+mixin projects-items
+    - let i = 1;
+    each element in pictures
+        if (i % 3 == 0)
+            .items.items_end
+                a(href='#popup' class='popup-link')
+                    .project-card 
+                        img(src=`${element.picture}` class='pictures')
+                        .description 
+                            span.description__title #{element.title}
+                            span.description__desc #{element.desc}
+        else if (i % 3 == 2)
+            .items.items_center
+                a(href='#popup' class='popup-link')
+                    .project-card
+                        img(src=`${element.picture}` class='pictures')
+                        .description 
+                            span.description__title #{element.title}
+                            span.description__desc #{element.desc}
+        else 
+            .items
+                a(href='#popup' class='popup-link')
+                    .project-card 
+                        img(src=`${element.picture}` class='pictures')
+                        .description 
+                            span.description__title #{element.title}
+                            span.description__desc #{element.desc}
+        - ++i;
+
+.portfolio.container 
+    .portfolio__title.row 
+        block content-header
+            include ../common/title.pug
+            +title("portfolio", 'creative works', true)
+    block projects 
+        .portfolio__content
+            +projects-items

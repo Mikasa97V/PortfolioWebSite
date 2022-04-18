@@ -1,0 +1,10 @@
+- 
+    let arr = [{label: "Contact me", light_color_mode: "dark", link: "contact"}, 
+    {label: "View projects", light_color_mode: "light", link: "portfolio"}];
+
+mixin button()
+    - let color_mode=light_color_mode ? 'light' : 'dark';
+    div(class=`wrapper wrapper_${position}`)
+        each element in arr
+            a.button(href=`#${element.link}`)
+                div(class=`wrapper_${element.light_color_mode}`) #{element.label}

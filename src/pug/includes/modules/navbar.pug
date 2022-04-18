@@ -1,0 +1,9 @@
+//- - let dataMenu = ['about me', 'technologies', 'portfolio', 'contact'];
+//- .navbar.navbar_position-end
+//-     each value in dataMenu
+//-         .navbar.navbar__nav-item= value
+mixin navbar(arr, position)
+    div(class=`navbar navbar_${position}`)
+        each element in arr 
+            //- .navbar.navbar__nav-item= element
+            a(href=`#${element}` class='navbar navbar__nav-item')= element

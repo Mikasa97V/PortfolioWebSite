@@ -1,0 +1,42 @@
+block vars-button
+    //- - let button_mode = [{title: "Contact me", color: "dark"}, {title: "View projects", color: "light"}];
+    - let info = {'Birthday:' : '3 December 2000', 'BitBucket:' : 'https://bitbucket.org/mikasa97/', 'Telegram:' : 'https://t.me/MiKaSa_V97', 'Email:' : 'mripro2016@yandex.ru'};
+
+.about-me.container
+    .about-me__title.row
+        block content-header
+            include ../common/title.pug
+            +title("about me", 'information', true)
+    .about-me__content
+        .content-info 
+            .container
+                .container__photo
+                    p.photo-title Hello!
+        .content-info__description
+            .description-text
+                .header
+                    .header__title about-me
+                    .header__description I’m web-developer.
+                .biography.
+                    Hi! My name is Yaroslavna Gaivoronyuk. I am currently studying <br/>
+                    at the 3’rd year of the Faculty of Applied Informatics. <br/> <br/>
+                    I have been fond of frontend development since the 1’st year. <br/>
+                    I like to make up landing pages of websites and develop web applications. <br/> <br/>
+                    I have been devoting the last six months to studying the React library. <br/>
+                    I want to develop as a React developer.
+                .contact 
+                    - let i = 1;
+                    each value, label in info
+                        .personal-information
+                            .personal-information__title= label
+                            if (i == 1)
+                                .personal-information__description= value
+                            else if (i == 4)
+                                a(class='personal-information__description' href=`mailto:${value}` target='_black')= value
+                            else    
+                                a(class='personal-information__description' href=`${value}` target='_black')= value
+                            - ++i;
+            .link-btn
+                block button 
+                    include ../common/button.pug
+                    +button()

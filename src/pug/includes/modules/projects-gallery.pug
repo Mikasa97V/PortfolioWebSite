@@ -1,0 +1,110 @@
+//- - 
+//-     let projectGal = [
+//-         {path: '../../../assets/img/projects/Cat.png'},
+//-         {path: '../../../assets/img/projects/Cat.png'},
+//-         {path: '../../../assets/img/projects/Cat.png'},
+//-         {path: '../../../assets/img/projects/Cat.png'},]
+
+
+//- mixin projects-gallery
+//-     -let i = 1;
+//-     each elem in projectGal
+//-         .gallery_item 
+//-             input.gallery__selector(type='radio' id=`img-${i}` name='gallery')
+//-             img.gallery__img.pict(src=`${elem.path}` alt='')
+//-             label.gallery__thumb(for=`img-${i}`)
+//-                 img.pict(src=`${elem.path}` alt='')
+//-         - ++i;
+
+//- section.project-gallery
+//-     block project-gallery
+//-         .project-gallery_item 
+//-             input.project-gallery__selector(type='radio' id=`img-1` name='gallery' checked)
+//-             img.project-gallery__img.pict(src=`../../../assets/img/projects/Cat.png` alt='')
+//-             label.project-gallery__thumb(for=`img-1`)
+//-                 img.pict(src=`../../../assets/img/projects/Cat.png` alt='')
+//-         +projects-gallery
+//- .btn-close-gallery &times;
+
+
+
+
+//- section.project-gallery
+//-     .thumbnail-wrap
+//-       .project-gallery__item
+//-         input#img-1.project-gallery__selector(type='radio' checked='' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/1015/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-1')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/1015/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-2.project-gallery__selector(type='radio' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/1039/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-2')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/1039/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-3.project-gallery__selector(type='radio' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/1057/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-3')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/1057/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-4.project-gallery__selector(type='radio' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/106/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-4')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/106/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-5.project-gallery__selector(type='radio' checked='' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/1015/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-5')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/1015/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-6.project-gallery__selector(type='radio' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/1039/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-6')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/1039/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-7.project-gallery__selector(type='radio' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/1057/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-7')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/1057/150/100.jpg' alt='')
+//-       .project-gallery__item
+//-         input#img-8.project-gallery__selector(type='radio' name='gallery')
+//-         img.project-gallery__img(src='https://picsum.photos/id/106/648/400.jpg' alt='')
+//-         label.project-gallery__thumb(for='img-8')
+//-           img.project-gallery__thumbnail(src='https://picsum.photos/id/106/150/100.jpg' alt='')
+
+
+//- <section class="swiper-container">
+//-     <div class="swiper-wrapper">
+//-         <div class="swiper-slide">
+//-             <div class="swiper-content">
+//-                 <p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+//-                 <span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+//-             </div>
+//-         </div>
+//-         <!-- Еще слайды -->
+//-         <div class="swiper-slide" style="background: green">
+//-             <div class="swiper-content">
+//-                 <p class="swiper-title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Заголовок</p>
+//-                 <span class="swiper-caption" data-swiper-parallax="-20%">Описание слайда</span>
+//-             </div>
+//-         </div>
+//-     </div>
+//-     <div class="swiper-pagination"></div>
+//-     <div class="swiper-button-prev swiper-button-white"></div>
+//-     <div class="swiper-button-next swiper-button-white"></div>
+//- </section>
+
+section.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      .swiper-content
+        p.swiper-title(data-swiper-parallax='-30%', data-swiper-parallax-scale='.7') &Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy;
+        span.swiper-caption(data-swiper-parallax='-20%') &Ocy;&pcy;&icy;&scy;&acy;&ncy;&icy;&iecy; &scy;&lcy;&acy;&jcy;&dcy;&acy;
+    // Еще слайды
+    .swiper-slide(style='background: green')
+      .swiper-content
+        p.swiper-title(data-swiper-parallax='-30%', data-swiper-parallax-scale='.7') &Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy;
+        span.swiper-caption(data-swiper-parallax='-20%') &Ocy;&pcy;&icy;&scy;&acy;&ncy;&icy;&iecy; &scy;&lcy;&acy;&jcy;&dcy;&acy;
+  .swiper-pagination
+  .swiper-button-prev.swiper-button-white
+  .swiper-button-next.swiper-button-white
